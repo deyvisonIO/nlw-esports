@@ -1,6 +1,5 @@
-![NLW eSports wallpaper oficial](./web//public//readme-wallpaper.png)
-![NLW eSports wallpaper oficial](./web//public//screen-one.png)
-![NLW eSports wallpaper oficial](./web//public//screen-add-ads.png)
+![NLW eSports Landing Page](./Landing-page.png)
+![NLW eSports Ad Modal](./Modal.png)
 
 # NLW eSports
 This is a project designed by rocketseat,
