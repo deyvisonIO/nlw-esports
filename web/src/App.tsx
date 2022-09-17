@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 
+
 import './styles/main.css';
 
 import logoImg from './assets/logo-nlw-esports.svg';

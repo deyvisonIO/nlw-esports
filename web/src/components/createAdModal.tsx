@@ -2,6 +2,7 @@ import { useState, useEffect, FormEvent } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import * as CheckBox from '@radix-ui/react-checkbox';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
+import * as Select from '@radix-ui/react-select';
 
 import { ArrowClockwise, Check, GameController } from 'phosphor-react';
 
@@ -58,17 +59,27 @@ export function CreateAdModal() {
               <form onSubmit={handleCreateAd} className="mt-8 flex flex-col gap-4">
                 <div className="flex flex-col gap-2" >
                   <label htmlFor="game" className="font-semibold" >Qual o game?</label>
-                  <select
-                    name="game" 
-                    id="game"
-                    className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500 appearance-none"
-                    defaultValue=""
-                    >
-                        <option value="" disabled>Selecione o game que deseja jogar</option>
+                  <Select.Root>
+                    <Select.Trigger className="bg-zinc-900 py-3 px-4 rounded flex justify-end gap-10">
+                      <Select.Value placeholder="Selecione o game que deseja jogar" className="text-sm text-zinc-500 " />
+                      <Select.Icon />
+                    </Select.Trigger>
+                    <Select.Content>
+                      <Select.ScrollUpButton />
+                      <Select.Viewport>
                         {games.map(game => {
-                            return <option key={game.id} value={game.id} >{game.title}</option>
+                          return (
+                          <Select.Item key={game.id}  value={game.id}>
+                            <Select.ItemText>{game.title}</Select.ItemText>
+                            <Select.ItemIndicator>
+                              <Check size={24} />
+                            </Select.ItemIndicator>
+                          </Select.Item>)
                         })}
-                  </select>
+                      </Select.Viewport>
+                    </Select.Content>
+                  </Select.Root>
+                  
                 </div>
                 <div className="flex flex-col gap-2" >
                   <label htmlFor="name">Seu nome (ou nickname)</label>
